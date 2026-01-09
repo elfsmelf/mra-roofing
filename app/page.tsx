@@ -1,103 +1,133 @@
-import Image from "next/image";
+import { Check } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const afterImage = "https://assets.guestsnapper.com/wedding-gallery-media/5fb4de74-boonah-after_10000000ky0hh02x012000.jpg"
+  const beforeImage = "https://assets.guestsnapper.com/wedding-gallery-media/b5d73238-boonah-before_10ow0gm0ho0gm03e000000.jpg"
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen bg-background">
+      <header className="bg-white py-4 px-6 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="text-2xl font-bold">
+            <span className="text-primary italic">The</span>
+            <span className="text-foreground">ROOFER</span>
+          </span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <p className="hidden md:block text-muted-foreground text-sm tracking-wide">
+          SERVICING GREATER BRISBANE, IPSWICH AND SURROUNDING SUBURBS
+        </p>
+        <div className="flex items-center gap-2">
+          <span className="hidden sm:inline text-foreground font-medium">Call For Instant Quote:</span>
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 border-0 shadow-none">
+            1300 080 883
+          </Button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="flex flex-col lg:flex-row">
+        {/* Left Side - Before/After Image Showcase */}
+        <div className="relative lg:w-1/2 bg-primary min-h-[500px] lg:min-h-[650px] flex items-center justify-center overflow-hidden">
+          <div className="relative p-6 lg:p-10 w-full max-w-2xl">
+            {/* Main AFTER image - large */}
+            <div className="relative">
+              {/* AFTER label */}
+              <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 font-bold text-sm tracking-wider z-30 rounded shadow-lg">
+                AFTER
+              </div>
+              <img
+                src={afterImage}
+                alt="After roof replacement - new white metal roof"
+                className="rounded-xl shadow-2xl w-full object-cover aspect-[4/3]"
+              />
+              {/* Small BEFORE image overlay */}
+              <div className="absolute bottom-[-30px] right-[-10px] lg:right-[-40px] w-36 lg:w-52 z-20">
+                {/* BEFORE label */}
+                <div className="absolute top-2 left-2 bg-foreground text-white px-3 py-1 font-bold text-xs tracking-wider z-30 rounded shadow-lg">
+                  BEFORE
+                </div>
+                <div className="rounded-xl overflow-hidden border-4 border-white shadow-2xl">
+                  <img
+                    src={beforeImage}
+                    alt="Before roof replacement - old weathered roof"
+                    className="w-full h-full object-cover aspect-[4/3]"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side - Content */}
+        <div className="lg:w-1/2 bg-white p-8 lg:p-16 flex flex-col justify-center">
+          <div className="max-w-lg">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-6">
+              Brisbane's Premier
+              <br />
+              <span className="text-primary">Residential Metal Roofer</span>
+            </h1>
+            <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
+              Specialising in high-quality metal roof replacements, we understand the importance of a durable roof to
+              protect your home.
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              {[
+                { bold: "Fast", text: "turnaround & pricing" },
+                { bold: "7 year", text: "workmanship warranty" },
+                { bold: "20+ years", text: "roofing experience" },
+                { bold: "Fully certified", text: "and licensed" },
+              ].map((item, index) => (
+                <div key={index} className="flex items-center gap-3 bg-gray-50 rounded-lg p-3">
+                  <div className="bg-primary rounded-full p-1">
+                    <Check className="w-4 h-4 text-primary-foreground flex-shrink-0" />
+                  </div>
+                  <p className="text-foreground text-sm">
+                    <span className="font-bold">{item.bold}</span> {item.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <Button
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-7 text-lg w-full sm:w-auto border-0 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              Get A FREE Quote in 24 Hours
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <div className="bg-foreground text-white py-4 px-6">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-4 lg:gap-8">
+          <span className="text-gray-400">We're Experienced In:</span>
+          {[
+            { highlight: "New", text: "Roofing" },
+            { highlight: "Re-roofing", text: "" },
+            { highlight: "Asbestos", text: "Removal" },
+            { highlight: "Guttering", text: "& Fascia" },
+          ].map((service, index) => (
+            <span key={index} className="flex items-center gap-4">
+              <span className="text-center">
+                <span className="text-primary font-semibold block">{service.highlight}</span>
+                {service.text && <span className="text-white text-sm">{service.text}</span>}
+              </span>
+              {index < 3 && <span className="text-gray-500 hidden lg:inline">|</span>}
+            </span>
+          ))}
+          <div className="flex items-center gap-3 ml-4">
+            <div className="border border-white px-2 py-1 text-xs">
+              <span className="font-bold">QBCC</span>
+            </div>
+            <div className="text-xs">
+              <p className="text-gray-400">QBCC LICENSE</p>
+              <p>NO: 15204309</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
