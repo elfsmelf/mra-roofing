@@ -10,10 +10,13 @@ const _poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: "The Roofer - Brisbane's Premier Residential Metal Roofer",
+  title: "MRA Roofing | Metal Roof Replacements Brisbane & Gold Coast",
   description:
-    "Specialising in high-quality metal roof replacements in Greater Brisbane, Ipswich and surrounding suburbs. 20+ years experience, 10 year warranty.",
-  generator: "v0.app",
+    "Brisbane & Gold Coast's trusted metal roofing specialists. COLORBOND® roof replacements, certified asbestos removal, 7-year workmanship warranty. Free quotes in 24 hours. Call 1300 080 883.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   icons: {
     icon: [
       {
