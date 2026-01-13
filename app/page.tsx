@@ -221,9 +221,11 @@ export default function Home() {
           </p>
           <div className="flex items-center gap-2">
             <span className="hidden sm:inline text-foreground font-medium">Call For Instant Quote:</span>
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 border-0 shadow-none">
-              <Phone className="w-4 h-4 mr-2" />
-              1300 080 883
+            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 border-0 shadow-none">
+              <a href="tel:1300080883">
+                <Phone className="w-4 h-4 mr-2" />
+                1300 080 883
+              </a>
             </Button>
           </div>
         </div>
@@ -915,10 +917,10 @@ export default function Home() {
             <div>
               <h3 className="font-bold text-primary mb-4">Contact</h3>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-gray-300">
+                <a href="tel:1300080883" className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors">
                   <Phone className="w-4 h-4 text-primary" />
                   <span>1300 080 883</span>
-                </div>
+                </a>
                 <div className="flex items-center gap-3 text-gray-300">
                   <Clock className="w-4 h-4 text-primary" />
                   <span>Mon - Fri: 8:00am - 5:00pm</span>
