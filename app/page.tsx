@@ -1,6 +1,7 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
+import { useSearchParams } from "next/navigation"
 import { Check, ChevronDown, Phone, Clock, Wrench, Sun, Shield, Palette, FileText, Search, Send, PenLine, Calendar, Truck, Hammer, Award, BadgeCheck, ScrollText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
@@ -19,8 +20,38 @@ import {
 } from "@/components/ui/accordion"
 import { QuoteForm } from "@/components/quote-form"
 
-export default function Home() {
+function HeroHeadline() {
+  const searchParams = useSearchParams()
+  const customHeadline = searchParams.get("headline")
 
+  if (customHeadline) {
+    return (
+      <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-6">
+        {customHeadline}
+      </h1>
+    )
+  }
+
+  return (
+    <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-6">
+      Is Your Old Roof
+      <br />
+      <span className="italic">Costing You Money?</span>
+    </h1>
+  )
+}
+
+function DefaultHeadline() {
+  return (
+    <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-6">
+      Is Your Old Roof
+      <br />
+      <span className="italic">Costing You Money?</span>
+    </h1>
+  )
+}
+
+export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const scrollToForm = () => {
@@ -223,11 +254,9 @@ export default function Home() {
         <div className="lg:w-1/2 bg-white p-6 py-10 lg:p-16 flex flex-col justify-center">
           <div>
             <p className="text-foreground font-bold text-lg lg:text-xl tracking-wide mb-4">BRISBANE & GOLD COAST'S MOST TRUSTED ROOFERS</p>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight mb-6">
-              Is Your Old Roof
-              <br />
-              <span className="italic">Costing You Money?</span>
-            </h1>
+            <Suspense fallback={<DefaultHeadline />}>
+              <HeroHeadline />
+            </Suspense>
             <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
               Leaking roofs, rising energy bills, and constant repairs add up fast. Get a brand new COLORBOND® roof installed in as little as 3 days — built to protect your home for decades.
             </p>
