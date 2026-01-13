@@ -1,11 +1,13 @@
 "use client"
 
+import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import { Check } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { useSourcebuster } from "@/hooks/use-sourcebuster"
 import {
   Form,
   FormControl,
@@ -33,7 +35,7 @@ const formSchema = z.object({
   jobType: z.string().min(1, "Please select a job type"),
   roofMaterial: z.string().min(1, "Please select a roof material"),
   suburb: z.string().min(2, "Please enter your suburb"),
-  message: z.string().optional(),
+  message: z.string().min(1, "Please enter a message"),
 })
 
 type FormValues = z.infer<typeof formSchema>
@@ -62,6 +64,10 @@ const roofMaterials = [
 ]
 
 export function QuoteForm() {
+  const trackingData = useSourcebuster()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -76,9 +82,57 @@ export function QuoteForm() {
     },
   })
 
-  function onSubmit(values: FormValues) {
-    console.log(values)
-    // Handle form submission
+  async function onSubmit(values: FormValues) {
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    // Combine form data with tracking data
+    const submissionData = {
+      ...values,
+      // Tracking data from Sourcebuster
+      ...(trackingData && {
+        channel: trackingData.channel,
+        source: trackingData.source,
+        medium: trackingData.medium,
+        campaign: trackingData.campaign,
+        content: trackingData.content,
+        term: trackingData.term,
+        gclid: trackingData.gclid,
+        firstSource: trackingData.firstSource,
+        firstMedium: trackingData.firstMedium,
+        firstCampaign: trackingData.firstCampaign,
+        visits: trackingData.visits,
+        pagesSeen: trackingData.pagesSeen,
+        landingPage: trackingData.landingPage,
+        leadPage: trackingData.leadPage,
+        referer: trackingData.referer,
+      }),
+    }
+
+    try {
+      const response = await fetch(
+        "https://hook.us1.make.com/dq51wq1kv5tid3knjv1upaqd7i1fzzkm",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(submissionData),
+        }
+      )
+
+      if (response.ok) {
+        setSubmitStatus("success")
+        form.reset()
+      } else {
+        setSubmitStatus("error")
+      }
+    } catch (error) {
+      console.error("Form submission error:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -258,13 +312,30 @@ export function QuoteForm() {
           )}
         />
 
-        <Button
-          type="submit"
-          size="lg"
-          className="w-full bg-primary hover:bg-primary/90 text-foreground font-bold py-6 border-0"
-        >
-          Get Your FREE Quote
-        </Button>
+        {submitStatus === "success" ? (
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+            <div className="flex items-center justify-center gap-2 text-green-700 font-medium">
+              <Check className="w-5 h-5" />
+              Thank you! We'll be in touch within 24 hours.
+            </div>
+          </div>
+        ) : (
+          <>
+            {submitStatus === "error" && (
+              <div className="bg-red-50 border border-red-200 rounded-lg p-3 text-center text-red-700 text-sm">
+                Something went wrong. Please try again or call us at 1300 080 883.
+              </div>
+            )}
+            <Button
+              type="submit"
+              size="lg"
+              disabled={isSubmitting}
+              className="w-full bg-primary hover:bg-primary/90 text-foreground font-bold py-6 border-0 disabled:opacity-50"
+            >
+              {isSubmitting ? "Sending..." : "Get Your FREE Quote"}
+            </Button>
+          </>
+        )}
       </form>
     </Form>
   )
