@@ -89,6 +89,7 @@ export function QuoteForm() {
     // Combine form data with tracking data
     const submissionData = {
       ...values,
+      date_time: new Date().toISOString(),
       // Tracking data from Sourcebuster
       ...(trackingData && {
         channel: trackingData.channel,
