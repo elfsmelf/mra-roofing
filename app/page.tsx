@@ -373,10 +373,10 @@ export default function Home() {
                 {/* Service Areas */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                   <p className="text-gray-300 mb-4">
-                    We provide metal roofing services across Greater Brisbane, including:
+                    We provide metal roofing services across Greater Brisbane and the Gold Coast, including:
                   </p>
                   <div className="grid grid-cols-2 gap-3">
-                    {["Brisbane", "Logan", "Redlands", "Ipswich"].map((area, index) => (
+                    {["Brisbane", "Logan", "Gold Coast", "Ipswich"].map((area, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <div className="bg-primary rounded-full p-1">
                           <Check className="w-3 h-3 text-foreground" />
@@ -688,7 +688,7 @@ export default function Home() {
       <section className="py-8 px-6 bg-foreground">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-white text-lg lg:text-xl font-bold text-center md:text-left">
-            Providing Metal Roofing Services Across Greater Brisbane, Including Brisbane, Logan, Redlands and Ipswich
+            Providing Metal Roofing Services Across Greater Brisbane and the Gold Coast, Including Brisbane, Logan, Gold Coast and Ipswich
           </p>
           <Button
             size="lg"
