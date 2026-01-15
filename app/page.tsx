@@ -892,9 +892,6 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-foreground mb-2">
                 Get A Free Quote In 24 Hours!
               </h3>
-              <p className="text-muted-foreground text-sm mb-1">
-                *Standard business days (Mon-Fri)
-              </p>
               <p className="text-muted-foreground mb-6">
                 Or Call <a href="tel:1300080883" className="text-primary font-bold hover:underline">1300 080 883</a> to Schedule Your Estimate!
               </p>
