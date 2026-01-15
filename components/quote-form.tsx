@@ -331,7 +331,7 @@ export function QuoteForm() {
               type="submit"
               size="lg"
               disabled={isSubmitting}
-              className="w-full bg-primary hover:bg-primary/90 text-foreground font-bold py-6 border-0 disabled:opacity-50"
+              className="w-full bg-primary hover:bg-primary/90 text-foreground font-bold py-7 text-lg border-0 disabled:opacity-50"
             >
               {isSubmitting ? "Sending..." : "Get Your FREE Quote"}
             </Button>

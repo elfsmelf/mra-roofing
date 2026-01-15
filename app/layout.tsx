@@ -13,7 +13,7 @@ const _poppins = Poppins({
 export const metadata: Metadata = {
   title: "MRA Roofing | Metal Roof Replacements Brisbane & Gold Coast",
   description:
-    "Brisbane & Gold Coast's trusted metal roofing specialists. COLORBOND® roof replacements, certified asbestos removal, 7-year workmanship warranty. Free quotes in 24 hours. Call 1300 080 883.",
+    "Brisbane & Gold Coast's trusted metal roofing specialists. COLORBOND® roof replacements, certified asbestos removal, industry standard workmanship warranty. Free quotes in 24 hours. Call 1300 080 883.",
   robots: {
     index: false,
     follow: false,

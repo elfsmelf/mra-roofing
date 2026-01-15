@@ -98,7 +98,7 @@ export default function Home() {
     {
       icon: Palette,
       title: "Style Variety",
-      desc: "Wide range of colour and style options to compliment your home's aesthetic."
+      desc: "Wide range of colour and style options to complement your home aesthetic."
     }
   ]
 
@@ -140,17 +140,17 @@ export default function Home() {
     {
       text: "Quote Sent To You",
       icon: Send,
-      description: "Within 24-48 hours, you'll receive a detailed, transparent quote outlining all costs, materials, and the scope of work with no hidden fees."
+      description: "Within 24-48 business hours, you'll receive a detailed, transparent quote outlining all costs, materials, and the scope of work with no hidden fees."
     },
     {
       text: "Contract Completed and Signed",
       icon: PenLine,
-      description: "Once you're happy with the quote, we'll finalise the contract with clear terms, warranty information, and payment schedule."
+      description: "Once you're happy with the quote, we'll finalise the contract with clear terms and payment schedule."
     },
     {
       text: "Start Date Finalised",
       icon: Calendar,
-      description: "We'll work with your schedule to lock in a start date that suits you, typically within 2-4 weeks depending on availability and weather conditions."
+      description: "We'll work with your schedule to lock in a start date that suits you, typically within 4 weeks depending on availability and weather conditions."
     },
     {
       text: "Fall Protection & Delivery",
@@ -165,7 +165,7 @@ export default function Home() {
     {
       text: "Final Inspection & Certification",
       icon: Award,
-      description: "We conduct a final quality inspection, provide all relevant certifications for compliance, and hand over your 7-year workmanship warranty documentation."
+      description: "We conduct a final quality inspection, provide all relevant certifications for compliance, and hand over your workmanship warranty documentation."
     },
   ]
 
@@ -200,7 +200,7 @@ export default function Home() {
     },
     {
       q: "What warranties are available for metal roofs?",
-      a: "Most metal roofing products come with a manufacturer's warranty. In addition, we offer a 7 year workmanship warranty on full roof replacements to ensure quality installation. Our workmanship warranty is subject to terms and conditions."
+      a: "Most metal roofing products come with a manufacturer's warranty. In addition, we offer an industry standard workmanship warranty on full roof replacements to ensure quality installation. Our workmanship warranty is subject to terms and conditions."
     }
   ]
 
@@ -221,10 +221,10 @@ export default function Home() {
           </p>
           <div className="flex items-center gap-2">
             <span className="hidden sm:inline text-foreground font-medium">Call For Instant Quote:</span>
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-6 border-0 shadow-none">
-              <a href="tel:1300080883">
-                <Phone className="w-4 h-4 mr-2" />
-                1300 080 883
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-6 text-base border-0 shadow-none">
+              <a href="tel:0730633352">
+                <Phone className="w-5 h-5 mr-2" />
+                (07) 3063 3352
               </a>
             </Button>
           </div>
@@ -265,8 +265,8 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {[
-                { bold: "FREE quote", text: "within 24 hours" },
-                { bold: "7 year", text: "workmanship warranty" },
+                { bold: "FREE quote", text: "within 24 hours*" },
+                { bold: "Industry standard", text: "workmanship warranty" },
                 { bold: "Certified", text: "asbestos removal" },
                 { bold: "Fully licensed", text: "and insured" },
               ].map((item, index) => (
@@ -290,6 +290,7 @@ export default function Home() {
                 Get A FREE Quote In 24 Hours
               </Button>
               <p className="text-foreground/70 font-semibold text-sm">No obligation. Serving Brisbane & the Gold Coast.</p>
+              <p className="text-foreground/50 text-xs">*Standard business days (Mon-Fri)</p>
             </div>
           </div>
         </div>
@@ -428,13 +429,13 @@ export default function Home() {
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-8">Warranties & Certification</h2>
 
               <div className="space-y-6">
-                {/* 7 Year Workmanship */}
+                {/* Industry Standard Workmanship */}
                 <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex gap-4 items-start">
                   <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                     <Hammer className="w-6 h-6 text-foreground" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-foreground text-lg mb-1">7 Year Workmanship Warranty</h4>
+                    <h4 className="font-bold text-foreground text-lg mb-1">Industry Standard Workmanship Warranty</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">
                       Written warranty for the installation of metal roofing, fascia and gutter on full roof replacements.
                     </p>
@@ -449,7 +450,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-bold text-foreground text-lg mb-1">Product Warranty</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      Bluescope Steel warranties available for up to 36 years for roofing and 50 years for framing.
+                      Bluescope Steel warranties available for up to 36 years for roofing and 50 years for framing. T&Cs apply.
                     </p>
                   </div>
                 </div>
@@ -471,7 +472,7 @@ export default function Home() {
               <Button
                 size="lg"
                 onClick={scrollToForm}
-                className="bg-primary hover:bg-primary/90 text-foreground font-bold px-8 py-6 border-0 shadow-lg hover:shadow-xl transition-shadow mt-8 w-full md:w-auto"
+                className="bg-primary hover:bg-primary/90 text-foreground font-bold px-10 py-7 text-lg border-0 shadow-lg hover:shadow-xl transition-shadow mt-8 w-full md:w-auto"
               >
                 Get A FREE Quote In 24 Hours
               </Button>
@@ -599,7 +600,7 @@ export default function Home() {
                   <div>
                     <h4 className="font-bold text-foreground mb-1">Style Variety</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">
-                      Wide range of colours and styles to complement your home's aesthetic.
+                      Wide range of colours and styles to complement your home aesthetic.
                     </p>
                   </div>
                 </div>
@@ -638,7 +639,7 @@ export default function Home() {
               <Button
                 size="lg"
                 onClick={scrollToForm}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-6 border-0 w-full md:w-auto"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-10 py-7 text-lg border-0 shadow-lg hover:shadow-xl transition-shadow w-full md:w-auto"
               >
                 Get Your FREE Quote
               </Button>
@@ -693,7 +694,7 @@ export default function Home() {
           <Button
             size="lg"
             onClick={scrollToForm}
-            className="bg-primary hover:bg-primary/90 text-foreground font-bold px-8 py-6 border-0 shadow-lg hover:shadow-xl transition-shadow w-full md:w-auto md:whitespace-nowrap md:flex-shrink-0"
+            className="bg-primary hover:bg-primary/90 text-foreground font-bold px-10 py-7 text-lg border-0 shadow-lg hover:shadow-xl transition-shadow w-full md:w-auto md:whitespace-nowrap md:flex-shrink-0"
           >
             Request A FREE Quote Now!
           </Button>
@@ -796,7 +797,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   onClick={scrollToForm}
-                  className="bg-primary hover:bg-primary/90 text-foreground font-bold px-8 py-6 border-0 shadow-lg hover:shadow-xl transition-shadow w-full md:w-auto"
+                  className="bg-primary hover:bg-primary/90 text-foreground font-bold px-10 py-7 text-lg border-0 shadow-lg hover:shadow-xl transition-shadow w-full md:w-auto"
                 >
                   Request A FREE Quote
                 </Button>
@@ -861,8 +862,8 @@ export default function Home() {
 
               <div className="space-y-4 mb-8">
                 {[
-                  "Free quotes within 24 hours",
-                  "7 year workmanship warranty",
+                  "Free quotes within 24 hours*",
+                  "Industry standard workmanship warranty",
                   "Fully licensed and insured",
                   "Certified asbestos removal",
                   "Serving Brisbane & the Gold Coast",
@@ -874,6 +875,7 @@ export default function Home() {
                     <span className="text-white">{item}</span>
                   </div>
                 ))}
+                <p className="text-gray-400 text-xs mt-2">*Standard business days (Mon-Fri)</p>
               </div>
 
               <div className="rounded-xl overflow-hidden">
@@ -890,6 +892,9 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-foreground mb-2">
                 Get A Free Quote In 24 Hours!
               </h3>
+              <p className="text-muted-foreground text-sm mb-1">
+                *Standard business days (Mon-Fri)
+              </p>
               <p className="text-muted-foreground mb-6">
                 Or Call <a href="tel:1300080883" className="text-primary font-bold hover:underline">1300 080 883</a> to Schedule Your Estimate!
               </p>
