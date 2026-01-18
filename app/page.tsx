@@ -209,14 +209,14 @@ export default function Home() {
       {/* Sticky Header */}
       <header className="bg-white py-4 px-6 border-b border-gray-200 sticky top-0 z-50">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-6">
             <img
               src="https://assets.guestsnapper.com/wedding-gallery-media/mra/mra%20logo.webp"
               alt="MRA Roofing"
               className="h-12"
             />
           </div>
-          <p className="hidden lg:block text-muted-foreground text-sm tracking-wide absolute left-1/2 -translate-x-1/2">
+          <p className="hidden xl:block text-muted-foreground text-sm tracking-wide absolute left-1/2 -translate-x-1/2">
             SERVICING <span className="font-bold text-foreground">BRISBANE</span>, <span className="font-bold text-foreground">THE GOLD COAST</span> AND SURROUNDING SUBURBS
           </p>
           <div className="flex items-center gap-2">
