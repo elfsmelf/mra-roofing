@@ -168,7 +168,7 @@ export default function CommercialPage() {
       a: "Yes, we offer comprehensive roof inspection services for commercial buildings. Our detailed reports can help you understand the current condition of your roof and plan for any necessary maintenance or replacements."
     },
     {
-      q: "How much does commercial roofing cost in Brisbane?",
+      q: "How much does commercial roofing cost in Brisbane & the Gold Coast?",
       a: "Commercial roofing costs vary significantly based on the size of the building, type of roofing system, accessibility, and specific requirements. Contact us for a free, no-obligation quote tailored to your project."
     },
     {
@@ -223,14 +223,14 @@ export default function CommercialPage() {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative max-w-7xl mx-auto px-6 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="relative px-6 lg:px-12 py-16 lg:py-24 max-w-[1920px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-primary font-bold text-sm tracking-wider mb-4">COMMERCIAL & INDUSTRIAL ROOFING EXPERTS</p>
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-6">
                 Commercial Roofing
                 <br />
-                <span className="text-primary">Brisbane</span>
+                <span className="text-primary">Brisbane & The Gold Coast</span>
               </h1>
               <p className="text-gray-300 text-lg mb-8 leading-relaxed">
                 MRA Roofing and Construction offers commercial clients comprehensive roofing services from start to finish. Our experienced team can tackle any commercial job, from building a brand-new commercial structure to renovating an established one.
@@ -299,10 +299,10 @@ export default function CommercialPage() {
             <div>
               <p className="text-primary font-bold text-sm tracking-wider mb-2">COMPREHENSIVE SOLUTIONS</p>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-                Our Commercial Roofing Services in Brisbane
+                Our Commercial Roofing Services in Brisbane & The Gold Coast
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                MRA Roofing and Construction provides a range of both commercial and industrial roofing services throughout Brisbane designed to meet the needs of different businesses. From updating an old roof to installing a brand new roofing system, our expert team is ready to help.
+                MRA Roofing and Construction provides a range of both commercial and industrial roofing services throughout Brisbane & the Gold Coast designed to meet the needs of different businesses. From updating an old roof to installing a brand new roofing system, our expert team is ready to help.
               </p>
 
               <div className="space-y-3 mb-8">
@@ -370,7 +370,7 @@ export default function CommercialPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                  Trusted By Businesses Across Brisbane
+                  Trusted By Businesses Across Brisbane & The Gold Coast
                 </h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Commercial roofing involves a complicated and specialised set of needs. A commercial roof must protect assets, materials, and personnel from external elements while providing insulation against sound and temperature. As commercial roofers, it is our responsibility to ensure projects are completed with the highest quality of craftsmanship for long-term durability and reliability.
@@ -471,7 +471,7 @@ export default function CommercialPage() {
               Recent Commercial Roofing Projects
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              See some of our commercial and industrial roofing projects across Brisbane and Queensland.
+              See some of our commercial and industrial roofing projects across Brisbane, the Gold Coast and Queensland.
             </p>
           </div>
 
@@ -714,7 +714,7 @@ export default function CommercialPage() {
                 />
               </a>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Brisbane's trusted commercial and industrial roofing specialists. Quality workmanship guaranteed.
+                Brisbane & the Gold Coast's trusted commercial and industrial roofing specialists. Quality workmanship guaranteed.
               </p>
             </div>
 
