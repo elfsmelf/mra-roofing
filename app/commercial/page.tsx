@@ -26,52 +26,13 @@ export default function CommercialPage() {
     document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  const commercialProjects = [
-    {
-      image: "https://assets.guestsnapper.com/wedding-gallery-media/mra/structural-collapse1.webp",
-      title: "Structural Collapse & Asbestos Contamination",
-      location: "Brisbane"
-    },
-    {
-      image: "https://assets.guestsnapper.com/wedding-gallery-media/mra/IMG_3996.jpg",
-      title: "TrimDek Roof Sheeting",
-      location: "Yatala"
-    },
-    {
-      image: "https://assets.guestsnapper.com/wedding-gallery-media/mra/IMG_4785.jpg",
-      title: "Texas State School Roofing Project",
-      location: "Texas"
-    },
-    {
-      image: "https://assets.guestsnapper.com/wedding-gallery-media/mra/kruger%20state%20school.webp",
-      title: "Kruger State School Amenities Block",
-      location: "Kruger"
-    },
-    {
-      image: "https://assets.guestsnapper.com/wedding-gallery-media/mra/IMG_5183.jpg",
-      title: "Coombabah Waste Treatment Plant",
-      location: "Coombabah"
-    },
-    {
-      image: "https://assets.guestsnapper.com/wedding-gallery-media/mra/IMG_5410.jpg",
-      title: "Revitalising Mining Roof",
-      location: "Queensland"
-    },
-    {
-      image: "https://assets.guestsnapper.com/wedding-gallery-media/mra/IMG_5676.jpg",
-      title: "Upgrading Skylights - Petbarn",
-      location: "Nerang"
-    },
-  ]
-
   const services = [
     "Re-roofing of shopping centres, public buildings including schools, warehouses, industrial sites, hotels, and other commercial structures",
     "Roof Replacement",
-    "Updating electrical wiring on roof",
+    "New Build Commercial Roofs",
     "Overhaul of all plumbing and pipes",
     "Disconnecting and reconnecting air-conditioning units",
     "Revamping all facades",
-    "Re-painting and installing new signage",
     "Upgrade steel work",
     "Supply structural steel members to change roof slope",
     "Colorbond wall cladding",
@@ -200,14 +161,15 @@ export default function CommercialPage() {
             </a>
           </div>
           <p className="hidden xl:block text-muted-foreground text-sm tracking-wide absolute left-1/2 -translate-x-1/2">
-            SERVICING <span className="font-bold text-foreground">BRISBANE</span>, <span className="font-bold text-foreground">THE GOLD COAST</span> AND SURROUNDING SUBURBS
+            SERVICING <span className="font-bold text-foreground">SE QLD</span> & <span className="font-bold text-foreground">NORTHERN NSW</span>
           </p>
           <div className="flex items-center gap-2">
             <span className="hidden sm:inline text-foreground font-medium">Call For Instant Quote:</span>
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-6 text-base border-0 shadow-none">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-4 py-4 sm:px-8 sm:py-6 text-sm sm:text-base border-0 shadow-none">
               <a href="tel:0730633352">
-                <Phone className="w-5 h-5 mr-2" />
-                (07) 3063 3352
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2" />
+                <span className="hidden sm:inline">(07) 3063 3352</span>
+                <span className="sm:hidden">Call Now</span>
               </a>
             </Button>
           </div>
@@ -216,24 +178,17 @@ export default function CommercialPage() {
 
       {/* Hero Section */}
       <section className="relative bg-foreground overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src="https://assets.guestsnapper.com/wedding-gallery-media/mra/commercial/industrial-warehouse.jpg"
-            alt="Commercial roofing background"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="relative px-6 lg:px-12 py-16 lg:py-24 max-w-[1920px] mx-auto">
+        <div className="px-6 lg:px-12 py-16 lg:py-24 max-w-[1920px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-primary font-bold text-sm tracking-wider mb-4">COMMERCIAL & INDUSTRIAL ROOFING EXPERTS</p>
               <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-6">
                 Commercial Roofing
                 <br />
-                <span className="text-primary">Brisbane & The Gold Coast</span>
+                <span className="text-primary">SE QLD & Northern NSW</span>
               </h1>
               <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                MRA Roofing and Construction offers commercial clients comprehensive roofing services from start to finish. Our experienced team can tackle any commercial job, from building a brand-new commercial structure to renovating an established one.
+                MRA Roofing & Construction offers commercial clients comprehensive roofing services from start to finish. Our experienced team can tackle any commercial job, from building a brand-new commercial structure to renovating an established one.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
@@ -257,7 +212,7 @@ export default function CommercialPage() {
               <Button
                 size="lg"
                 onClick={scrollToForm}
-                className="bg-primary hover:bg-primary/90 text-foreground font-bold px-10 py-7 text-lg border-0 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-primary hover:bg-primary/90 text-foreground font-bold px-6 py-5 sm:px-10 sm:py-7 text-base sm:text-lg border-0 shadow-lg hover:shadow-xl transition-shadow w-full sm:w-auto"
               >
                 Get A FREE Commercial Quote
               </Button>
@@ -299,10 +254,10 @@ export default function CommercialPage() {
             <div>
               <p className="text-primary font-bold text-sm tracking-wider mb-2">COMPREHENSIVE SOLUTIONS</p>
               <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-                Our Commercial Roofing Services in Brisbane & The Gold Coast
+                Our Commercial Roofing Services in SE QLD & Northern NSW
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-                MRA Roofing and Construction provides a range of both commercial and industrial roofing services throughout Brisbane & the Gold Coast designed to meet the needs of different businesses. From updating an old roof to installing a brand new roofing system, our expert team is ready to help.
+                MRA Roofing & Construction provides a range of both commercial and industrial roofing services throughout SE QLD and Northern NSW designed to meet the needs of different businesses. From updating an old roof to installing a brand new roofing system, our expert team is ready to help.
               </p>
 
               <div className="space-y-3 mb-8">
@@ -320,7 +275,7 @@ export default function CommercialPage() {
               <Button
                 size="lg"
                 onClick={scrollToForm}
-                className="bg-primary hover:bg-primary/90 text-foreground font-bold px-10 py-7 text-lg border-0 shadow-lg hover:shadow-xl transition-shadow"
+                className="bg-primary hover:bg-primary/90 text-foreground font-bold px-6 py-5 sm:px-10 sm:py-7 text-base sm:text-lg border-0 shadow-lg hover:shadow-xl transition-shadow w-full sm:w-auto"
               >
                 Discuss Your Project
               </Button>
@@ -370,7 +325,7 @@ export default function CommercialPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
-                  Trusted By Businesses Across Brisbane & The Gold Coast
+                  Trusted By Businesses Across SE QLD & Northern NSW
                 </h3>
                 <p className="text-gray-300 leading-relaxed mb-6">
                   Commercial roofing involves a complicated and specialised set of needs. A commercial roof must protect assets, materials, and personnel from external elements while providing insulation against sound and temperature. As commercial roofers, it is our responsibility to ensure projects are completed with the highest quality of craftsmanship for long-term durability and reliability.
@@ -443,7 +398,7 @@ export default function CommercialPage() {
                 <Button
                   size="lg"
                   onClick={scrollToForm}
-                  className="bg-primary hover:bg-primary/90 text-foreground font-bold px-10 py-7 text-lg border-0 shadow-lg hover:shadow-xl transition-shadow w-full md:w-auto"
+                  className="bg-primary hover:bg-primary/90 text-foreground font-bold px-6 py-5 sm:px-10 sm:py-7 text-base sm:text-lg border-0 shadow-lg hover:shadow-xl transition-shadow w-full sm:w-auto"
                 >
                   Start Your Commercial Project
                 </Button>
@@ -462,51 +417,6 @@ export default function CommercialPage() {
         </div>
       </section>
 
-      {/* Projects Gallery */}
-      <section className="py-16 lg:py-24 px-6 bg-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-primary font-bold text-sm tracking-wider mb-2">OUR WORK</p>
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Recent Commercial Roofing Projects
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              See some of our commercial and industrial roofing projects across Brisbane, the Gold Coast and Queensland.
-            </p>
-          </div>
-
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-4">
-              {commercialProjects.map((project, index) => (
-                <CarouselItem key={index} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
-                  <div className="rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow bg-white">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="aspect-[4/3] w-full object-cover"
-                    />
-                    <div className="p-4">
-                      <h3 className="font-bold text-foreground mb-1">{project.title}</h3>
-                      <p className="text-muted-foreground text-sm">{project.location}</p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="flex justify-center items-center gap-4 mt-8">
-              <CarouselPrevious className="relative left-0 translate-y-0" />
-              <CarouselDots />
-              <CarouselNext className="relative right-0 translate-y-0" />
-            </div>
-          </Carousel>
-        </div>
-      </section>
 
       {/* Testimonials Section */}
       <section className="py-16 lg:py-24 px-6 bg-white">
@@ -559,7 +469,7 @@ export default function CommercialPage() {
             {/* Left - Image */}
             <div>
               <img
-                src="https://assets.guestsnapper.com/wedding-gallery-media/mra/mra%20service%20area.jpg"
+                src="https://assets.guestsnapper.com/wedding-gallery-media/Map%20Commercial%20mra.jpg"
                 alt="MRA Roofing service area map"
                 className="rounded-xl shadow-xl w-full object-cover"
               />
@@ -576,10 +486,10 @@ export default function CommercialPage() {
                 {/* Service Areas */}
                 <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10">
                   <p className="text-gray-300 mb-4">
-                    We provide commercial roofing services across Greater Brisbane and the Gold Coast, including:
+                    We provide commercial roofing services across South East Queensland and Northern NSW, including:
                   </p>
                   <div className="grid grid-cols-2 gap-3">
-                    {["Brisbane", "Logan", "Gold Coast", "Ipswich"].map((area, index) => (
+                    {["Brisbane", "Gold Coast", "Logan", "Ipswich", "Toowoomba", "Northern NSW"].map((area, index) => (
                       <div key={index} className="flex items-center gap-2">
                         <div className="bg-primary rounded-full p-1">
                           <Check className="w-3 h-3 text-foreground" />
@@ -714,7 +624,7 @@ export default function CommercialPage() {
                 />
               </a>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Brisbane & the Gold Coast's trusted commercial and industrial roofing specialists. Quality workmanship guaranteed.
+                SE QLD & Northern NSW's trusted commercial and industrial roofing specialists. Quality workmanship guaranteed.
               </p>
             </div>
 
