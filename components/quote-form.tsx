@@ -28,7 +28,8 @@ import {
 import { cn } from "@/lib/utils"
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
+  firstName: z.string().min(2, "First name must be at least 2 characters"),
+  lastName: z.string().min(2, "Last name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email"),
   phone: z.string().min(8, "Please enter a valid phone number"),
   propertyType: z.string().min(1, "Please select a property type"),
@@ -71,7 +72,8 @@ export function QuoteForm() {
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
       propertyType: "",
@@ -139,19 +141,35 @@ export function QuoteForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-foreground">Name</FormLabel>
-              <FormControl>
-                <Input placeholder="Your name" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <FormField
+            control={form.control}
+            name="firstName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-foreground">First Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="First name" autoComplete="given-name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <FormField
+            control={form.control}
+            name="lastName"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-foreground">Last Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Last name" autoComplete="family-name" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <FormField
