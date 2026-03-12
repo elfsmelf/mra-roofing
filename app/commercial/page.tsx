@@ -176,13 +176,6 @@ export default function CommercialPage() {
         </div>
       </header>
 
-      {/* TEMPORARY: High volume notice — remove when team availability returns to normal */}
-      <div className="bg-amber-50 border-b border-amber-200 px-6 py-3 text-center">
-        <p className="text-amber-900 text-sm font-medium">
-          <span className="font-bold">Please note:</span> We&apos;re currently experiencing a higher volume of enquiries.
-          Quote response times may be slightly longer than usual — we appreciate your patience.
-        </p>
-      </div>
 
       {/* Hero Section */}
       <section className="relative bg-foreground overflow-hidden">
