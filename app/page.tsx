@@ -140,7 +140,7 @@ export default function Home() {
     {
       text: "Quote Sent To You",
       icon: Send,
-      description: "Within 24-48 business hours, you'll receive a detailed, transparent quote outlining all costs, materials, and the scope of work with no hidden fees."
+      description: "You'll receive a detailed, transparent quote outlining all costs, materials, and the scope of work — with no hidden fees."
     },
     {
       text: "Contract Completed and Signed",
@@ -231,6 +231,14 @@ export default function Home() {
         </div>
       </header>
 
+      {/* TEMPORARY: High volume notice — remove when team availability returns to normal */}
+      <div className="bg-amber-50 border-b border-amber-200 px-6 py-3 text-center">
+        <p className="text-amber-900 text-sm font-medium">
+          <span className="font-bold">Please note:</span> We&apos;re currently experiencing a higher volume of enquiries.
+          Quote response times may be slightly longer than usual — we appreciate your patience.
+        </p>
+      </div>
+
       {/* Hero Section */}
       <section className="flex flex-col-reverse lg:flex-row">
         {/* Left Side - Before/After Image */}
@@ -265,7 +273,7 @@ export default function Home() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {[
-                { bold: "FREE quote", text: "within 24 hours*" },
+                { bold: "FREE quote", text: "with fast turnaround" },
                 { bold: "Industry standard", text: "workmanship warranty" },
                 { bold: "Certified", text: "asbestos removal" },
                 { bold: "Fully licensed", text: "and insured" },
@@ -287,10 +295,10 @@ export default function Home() {
                 onClick={scrollToForm}
                 className="bg-primary hover:bg-primary/90 text-foreground font-bold px-10 py-7 text-lg w-full sm:w-auto border-0 shadow-lg hover:shadow-xl transition-shadow"
               >
-                Get A FREE Quote In 24 Hours
+                Get A FREE Quote Today
               </Button>
               <p className="text-foreground/70 font-semibold text-sm">No obligation. Serving Brisbane & the Gold Coast.</p>
-              <p className="text-foreground/50 text-xs">*Standard business days (Mon-Fri)</p>
+              <p className="text-foreground/50 text-xs">*Response times may vary during busy periods</p>
             </div>
           </div>
         </div>
@@ -474,7 +482,7 @@ export default function Home() {
                 onClick={scrollToForm}
                 className="bg-primary hover:bg-primary/90 text-foreground font-bold px-10 py-7 text-lg border-0 shadow-lg hover:shadow-xl transition-shadow mt-8 w-full md:w-auto"
               >
-                Get A FREE Quote In 24 Hours
+                Get A FREE Quote Today
               </Button>
             </div>
           </div>
@@ -862,7 +870,7 @@ export default function Home() {
 
               <div className="space-y-4 mb-8">
                 {[
-                  "Free quotes within 24 hours*",
+                  "Free quotes with fast turnaround",
                   "Industry standard workmanship warranty",
                   "Fully licensed and insured",
                   "Certified asbestos removal",
@@ -875,7 +883,7 @@ export default function Home() {
                     <span className="text-white">{item}</span>
                   </div>
                 ))}
-                <p className="text-gray-400 text-xs mt-2">*Standard business days (Mon-Fri)</p>
+                <p className="text-gray-400 text-xs mt-2">*Response times may vary during busy periods</p>
               </div>
 
               <div className="rounded-xl overflow-hidden">
@@ -890,7 +898,7 @@ export default function Home() {
             {/* Right - Form */}
             <div className="bg-white rounded-2xl p-6 lg:p-8 shadow-2xl">
               <h3 className="text-2xl font-bold text-foreground mb-2">
-                Get A Free Quote In 24 Hours!
+                Get A Free Quote Today!
               </h3>
               <p className="text-muted-foreground mb-6">
                 Or Call <a href="tel:1300080883" className="text-primary font-bold hover:underline">1300 080 883</a> to Schedule Your Estimate!

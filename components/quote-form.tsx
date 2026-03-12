@@ -333,9 +333,17 @@ export function QuoteForm() {
 
         {submitStatus === "success" ? (
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
-            <div className="flex items-center justify-center gap-2 text-green-700 font-medium">
-              <Check className="w-5 h-5" />
-              Thank you! We'll be in touch ASAP.
+            <div className="flex flex-col items-center gap-2 text-green-700">
+              <div className="flex items-center gap-2 font-medium">
+                <Check className="w-5 h-5" />
+                Quote Request Received!
+              </div>
+              <p className="text-green-600 text-sm">
+                Thank you for getting in touch. We&apos;re receiving a higher volume of
+                enquiries at the moment, but our team is working hard to get quotes out
+                promptly. We&apos;ll contact you regarding your roofing needs as quickly
+                as possible.
+              </p>
             </div>
           </div>
         ) : (
