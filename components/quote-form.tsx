@@ -17,6 +17,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
+import { AddressAutocomplete, type AddressDetails } from "@/components/address-autocomplete"
 import { Textarea } from "@/components/ui/textarea"
 import {
   Select,
@@ -35,7 +36,7 @@ const formSchema = z.object({
   propertyType: z.string().min(1, "Please select a property type"),
   jobType: z.string().min(1, "Please select a job type"),
   roofMaterial: z.string().min(1, "Please select a roof material"),
-  suburb: z.string().min(2, "Please enter your suburb"),
+  address: z.string().min(5, "Please enter your address"),
   message: z.string().min(1, "Please enter a message"),
 })
 
@@ -68,6 +69,7 @@ export function QuoteForm() {
   const trackingData = useSourcebuster()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
+  const [addressDetails, setAddressDetails] = useState<AddressDetails | null>(null)
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -79,7 +81,7 @@ export function QuoteForm() {
       propertyType: "",
       jobType: "",
       roofMaterial: "",
-      suburb: "",
+      address: "",
       message: "",
     },
   })
@@ -89,8 +91,15 @@ export function QuoteForm() {
     setSubmitStatus("idle")
 
     // Combine form data with tracking data
+    const selected = addressDetails?.address === values.address ? addressDetails : null
     const submissionData = {
       ...values,
+      // Structured pieces from Google Places when the user picked a suggestion.
+      // "suburb" is kept so the existing Make scenario keeps receiving it.
+      suburb: selected?.suburb ?? "",
+      state: selected?.state ?? "",
+      postcode: selected?.postcode ?? "",
+      placeId: selected?.placeId ?? "",
       date_time: new Date().toISOString(),
       // Tracking data from Sourcebuster
       ...(trackingData && {
@@ -127,6 +136,7 @@ export function QuoteForm() {
       if (response.ok) {
         setSubmitStatus("success")
         form.reset()
+        setAddressDetails(null)
       } else {
         setSubmitStatus("error")
       }
@@ -300,12 +310,20 @@ export function QuoteForm() {
 
         <FormField
           control={form.control}
-          name="suburb"
+          name="address"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-foreground">Suburb</FormLabel>
+              <FormLabel className="text-foreground">Property Address</FormLabel>
               <FormControl>
-                <Input placeholder="Your suburb" {...field} />
+                <AddressAutocomplete
+                  placeholder="Start typing your address"
+                  name={field.name}
+                  ref={field.ref}
+                  value={field.value}
+                  onChange={field.onChange}
+                  onBlur={field.onBlur}
+                  onSelect={setAddressDetails}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
